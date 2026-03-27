@@ -13,23 +13,21 @@
 
   <div class="capa">
 
-    <!-- Imagem: lado esquerdo no desktop, fundo no mobile -->
-    <div class="capa-imagem">
+    <figure class="capa-imagem">
       <img src="assets/img/about.jpg" alt="Vitrine da Delicatte Confeitaria" />
-    </div>
+    </figure>
 
-    <!-- Conteúdo: lado direito no desktop, sobreposto no mobile -->
-    <div class="capa-conteudo">
+    <main class="capa-conteudo">
+      <!-- Efeito decorativo de luz — sem significado semântico -->
       <div class="capa-lights" aria-hidden="true"></div>
 
       <div class="capa-inner">
-        <div class="capa-logo">
+        <p class="capa-logo">
           <span aria-hidden="true">✦</span>
           Delicatte
-        </div>
+        </p>
 
         <p class="capa-eyebrow">Confeitaria artesanal · Recife</p>
-
         <h1 class="capa-titulo">
           Bem-vindo ao
           <em>nosso cardápio</em>
@@ -41,24 +39,20 @@
           Chame o atendente para fazer seu pedido.
         </p>
 
-        <!--
-          <a> puro — zero JS.
-          Clicou: vai para cardapio.html. Navegação HTML nativa.
-          Com JS na próxima fase: animação de transição,
-          mas o link funciona igual sem JS.
-        -->
         <a href="cardapio.html" class="capa-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
             <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
           </svg>
           Ver cardápio
         </a>
+
       </div>
 
-      <div class="capa-footer" aria-hidden="true">
+      <footer class="capa-footer" aria-hidden="true">
         Chame o atendente para fazer seu pedido
-      </div>
-    </div>
+      </footer>
+
+    </main>
 
   </div>
 
