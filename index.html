@@ -3,216 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cardápio — Delicatte</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Delicatte — Bem-vindo</title>
+  <link rel="stylesheet" href="css/capa.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Efeito de luzes de fundo (decorativo, sem semântica) -->
-  <div class="lights" aria-hidden="true"></div>
+  <div class="capa">
 
-  <!-- ── HEADER ───────────────────────────────────────────────
-       <header> = cabeçalho principal da página (landmark semântico).
-       Fica fixo no topo para que o logo e o número da mesa
-       fiquem sempre visíveis enquanto o usuário rola o cardápio.
-  ──────────────────────────────────────────────────────────── -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
+    <!-- Imagem: lado esquerdo no desktop, fundo no mobile -->
+    <div class="capa-imagem">
+      <img src="assets/img/about.jpg" alt="Vitrine da Delicatte Confeitaria" />
+    </div>
 
-        <!-- <a> com href="#" apenas ancora o logo ao topo -->
-        <a href="#" class="logo" aria-label="Delicatte — início">
-          <span class="logo-icon" aria-hidden="true">✦</span>
-          <span class="logo-text">Delicatte</span>
-        </a>
+    <!-- Conteúdo: lado direito no desktop, sobreposto no mobile -->
+    <div class="capa-conteudo">
+      <div class="capa-lights" aria-hidden="true"></div>
 
-        <!-- Banner de mesa — preenchido pelo JS via parâmetro ?mesa=N na URL -->
-        <!-- aria-live="polite" anuncia a mesa para leitores de tela ao carregar -->
-        <div class="mesa-badge" id="mesa-badge" aria-live="polite" hidden>
-          <span class="mesa-label">Mesa</span>
-          <span class="mesa-numero" id="mesa-numero">—</span>
+      <div class="capa-inner">
+        <div class="capa-logo">
+          <span aria-hidden="true">✦</span>
+          Delicatte
         </div>
 
-      </div>
-    </div>
-  </header>
+        <p class="capa-eyebrow">Confeitaria artesanal · Recife</p>
 
-  <!-- ── AVISO "COMO FUNCIONA" ─────────────────────────────────
-       <aside> = conteúdo relacionado mas não central ao fluxo.
-       Aqui serve de orientação para o cliente que acabou de abrir o QR code
-       e ainda não sabe que não há carrinho — só vitrine + garçom.
-  ──────────────────────────────────────────────────────────── -->
-  <aside class="instrucao-bar" role="note" aria-label="Como fazer seu pedido">
-    <div class="container">
-      <p class="instrucao-texto">
-        <span aria-hidden="true">👀</span>
-        Explore o cardápio à vontade e <strong>chame o garçom</strong> para fazer seu pedido.
-      </p>
-    </div>
-  </aside>
+        <h1 class="capa-titulo">
+          Bem-vindo ao
+          <em>nosso cardápio</em>
+        </h1>
 
-  <!-- ── HERO ──────────────────────────────────────────────────
-       <section> com aria-labelledby aponta para o <h1> dentro dela,
-       criando um "region" semântico nomeado para leitores de tela.
-  ──────────────────────────────────────────────────────────── -->
-  <section class="hero" aria-labelledby="hero-titulo">
-    <div class="container">
-      <p class="hero-eyebrow">Mesa · Cardápio digital</p>
-      <h1 class="hero-title" id="hero-titulo">Nosso <em>Cardápio</em></h1>
-      <p class="hero-subtitle">Cada peça feita com amor, do início ao fim.</p>
-    </div>
-  </section>
+        <p class="capa-desc">
+          Explore nossa seleção de doces artesanais feitos
+          com ingredientes selecionados e muito carinho.
+          Chame o atendente para fazer seu pedido.
+        </p>
 
-  <!-- ── FILTROS ────────────────────────────────────────────────
-       <section> com role="search" (ARIA) sinaliza que esta área
-       serve para localizar conteúdo na página.
-       O <label> associado via htmlFor aponta para o input de busca.
-  ──────────────────────────────────────────────────────────── -->
-  <section class="filters-section" role="search" aria-label="Filtrar produtos">
-    <div class="container">
-      <div class="filters-wrapper">
-
-        <!-- Campo de busca -->
-        <div class="search-wrap">
-          <label for="search-input" class="sr-only">Buscar doce por nome</label>
-          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-            <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
+        <!--
+          <a> puro — zero JS.
+          Clicou: vai para cardapio.html. Navegação HTML nativa.
+          Com JS na próxima fase: animação de transição,
+          mas o link funciona igual sem JS.
+        -->
+        <a href="cardapio.html" class="capa-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+            <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
           </svg>
-          <input
-            type="search"
-            id="search-input"
-            class="search-input"
-            placeholder="Buscar doce..."
-            aria-label="Buscar produto pelo nome"
-            autocomplete="off"
-          />
-        </div>
-
-        <!-- Botões de categoria (nav de âncoras semânticas) -->
-        <!-- role="group" + aria-label descrevem o conjunto de filtros -->
-        <nav class="categories" id="categories" role="group" aria-label="Filtrar por categoria">
-          <button class="category-btn active" data-categoria="todos">Todos</button>
-          <button class="category-btn" data-categoria="tortas">Tortas</button>
-          <button class="category-btn" data-categoria="bolos">Bolos</button>
-          <button class="category-btn" data-categoria="bombons">Bombons</button>
-          <button class="category-btn" data-categoria="especial">Especial</button>
-        </nav>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── GRID DE PRODUTOS ───────────────────────────────────────
-       <main> = conteúdo principal e único da página (landmark).
-       Dentro dele, o JS vai criar um <article> para cada produto —
-       <article> representa um item independente e reutilizável.
-  ──────────────────────────────────────────────────────────── -->
-  <main class="main" id="main-content">
-    <div class="container">
-
-      <!-- Contador de resultados — atualizado pelo JS, lido por leitores de tela -->
-      <p class="results-count" id="results-count" aria-live="polite" aria-atomic="true"></p>
-
-      <!-- Grade de cards — preenchida dinamicamente pelo script.js -->
-      <div
-        class="products-grid"
-        id="products-grid"
-        role="list"
-        aria-label="Lista de produtos"
-      ></div>
-
-      <!-- Estado vazio — exibido quando nenhum produto corresponde ao filtro -->
-      <div class="empty-state hidden" id="empty-state" role="status">
-        <span class="empty-icon" aria-hidden="true">🍰</span>
-        <p class="empty-text">Nenhum doce encontrado.</p>
-        <p class="empty-sub">Tente outro termo ou categoria.</p>
+          Ver cardápio
+        </a>
       </div>
 
-    </div>
-  </main>
-
-  <!-- ── MODAL DE DETALHES ──────────────────────────────────────
-       <dialog> é o elemento nativo do HTML para modais/diálogos.
-       role="dialog" + aria-modal="true" + aria-labelledby fazem o
-       leitor de tela anunciar corretamente o conteúdo ao abrir.
-  ──────────────────────────────────────────────────────────── -->
-  <dialog
-    class="modal"
-    id="modal"
-    aria-modal="true"
-    aria-labelledby="modal-nome"
-  >
-    <!-- Botão de fechar — posicionado absolutamente sobre o conteúdo -->
-    <button class="modal-close" id="modal-close" aria-label="Fechar detalhes do produto">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-        <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/>
-      </svg>
-    </button>
-
-    <!-- Imagem do produto no modal -->
-    <div class="modal-img-wrap">
-      <img class="modal-img" id="modal-img" src="" alt="" />
-      <span class="modal-badge" id="modal-badge" hidden>✦ Destaque</span>
-    </div>
-
-    <!-- Conteúdo textual do modal -->
-    <div class="modal-body">
-      <span class="modal-categoria" id="modal-categoria"></span>
-      <h2 class="modal-nome" id="modal-nome"></h2>
-      <p class="modal-descricao" id="modal-descricao"></p>
-
-      <!-- Informações extras do produto -->
-      <div class="modal-infos" id="modal-infos"></div>
-
-      <!-- Rodapé do modal: preço + disponibilidade -->
-      <div class="modal-footer">
-        <span class="modal-preco" id="modal-preco"></span>
-        <span class="modal-disponibilidade" id="modal-disponibilidade"></span>
+      <div class="capa-footer" aria-hidden="true">
+        Chame o atendente para fazer seu pedido
       </div>
-
-      <!-- Instrução de pedido dentro do modal -->
-      <p class="modal-instrucao">
-        <span aria-hidden="true">🛎️</span> Chame o garçom para pedir este item.
-      </p>
     </div>
-  </dialog>
 
-  <!-- Backdrop que escurece o fundo quando o modal está aberto -->
-  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"></div>
+  </div>
 
-  <!-- ── FOOTER ─────────────────────────────────────────────────
-       <footer> = rodapé da página (landmark semântico).
-  ──────────────────────────────────────────────────────────── -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer-text">
-        <span class="logo-icon" aria-hidden="true">✦</span>
-        Delicatte — Chame o atendente para fazer seu pedido.
-      </p>
-    </div>
-  </footer>
-
-  <!-- ── BOTÃO FLUTUANTE "CHAMAR GARÇOM" ───────────────────────
-       Posicionado fixo no canto inferior direito.
-       Abre o WhatsApp com mensagem pré-preenchida.
-       aria-label descreve a ação para leitores de tela.
-  ──────────────────────────────────────────────────────────── -->
-  <a
-    class="fab"
-    id="fab-garcom"
-    href="#"
-    aria-label="Chamar garçom pelo WhatsApp"
-    role="button"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-      <path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.16A48.3,48.3,0,0,1,111.17,117l9.19-14.77A8,8,0,0,0,121,94.3l-16-32A8,8,0,0,0,96,58C53.38,58,32,119.88,32,136c0,53.64,56.43,64,96,64a160,160,0,0,0,27.67-2.46C194.2,192.39,224,163.17,224,136A8,8,0,0,0,187.58,144.84Z"/>
-    </svg>
-    <span class="fab-texto">Chamar garçom</span>
-  </a>
-
-  <script src="script.js"></script>
 </body>
 </html>
