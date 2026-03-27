@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/img/about.jpg" alt="Delicatte Confeitaria" width="100%" style="border-radius: 12px; max-height: 340px; object-fit: cover;" />
+  <img src="assets/img/banner-delicatte.jpg" alt="Delicatte Confeitaria" width="100%" style="border-radius: 12px; max-height: 340px; object-fit: cover;" />
 </div>
 
 <br />
