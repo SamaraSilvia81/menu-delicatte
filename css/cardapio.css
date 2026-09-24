@@ -1,0 +1,413 @@
+/* ══════════════════════════════════════════════════════
+   DELICATTE — cardapio.css
+══════════════════════════════════════════════════════ */
+
+@import './global.css';
+
+/* ── LUZES DECORATIVAS ──────────────────────────────── */
+.lights {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.lights::before {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(134,1,32,.4), transparent 70%);
+  filter: blur(80px);
+  opacity: .18;
+  top: -100px; right: -100px;
+}
+
+.lights::after {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(250,209,218,.5), transparent 70%);
+  filter: blur(70px);
+  opacity: .2;
+  bottom: -60px; left: -60px;
+}
+
+/* ── HEADER ─────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,251,239,.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  height: 58px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.logo-icon { color: var(--crimson); font-size: .9rem; }
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text-1);
+  letter-spacing: -.02em;
+}
+
+/* ── BARRA DE INSTRUÇÃO ──────────────────────────────── */
+.instrucao-bar {
+  position: relative;
+  z-index: 1;
+  background: var(--blush-soft);
+  border-bottom: 1px solid var(--blush);
+  padding: .6rem 0;
+}
+
+.instrucao-texto {
+  font-size: .8rem;
+  color: var(--text-2);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  line-height: 1.5;
+}
+
+.instrucao-texto strong { color: var(--crimson); }
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: .6rem;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  color: var(--text-1);
+  margin-bottom: .65rem;
+}
+
+.hero-title em { font-style: italic; color: var(--crimson); }
+
+.hero-subtitle {
+  font-size: .9rem;
+  color: var(--text-muted);
+  max-width: 340px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ── FILTROS ─────────────────────────────────────────── */
+.filters-section {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 1.75rem;
+}
+
+.filters-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  align-items: center;
+}
+
+.search-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: .7rem 1rem .7rem 2.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  color: var(--text-1);
+  font-size: .9rem;
+  outline: none;
+  transition: border var(--t), box-shadow var(--t);
+  -webkit-appearance: none;
+}
+
+.search-input::placeholder { color: var(--text-muted); }
+
+.search-input:focus {
+  border-color: var(--crimson);
+  box-shadow: 0 0 0 3px rgba(134,1,32,.07);
+}
+
+.categories {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 3px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.categories::-webkit-scrollbar { display: none; }
+
+.category-btn {
+  padding: .4rem 1rem;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  font-size: .8rem;
+  color: var(--text-2);
+  background: var(--bg-surface);
+  transition: all var(--t);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.category-btn:hover {
+  border-color: var(--crimson);
+  color: var(--crimson);
+  background: var(--blush-soft);
+}
+
+.category-btn.active {
+  background: var(--crimson);
+  border-color: var(--crimson);
+  color: #fff;
+}
+
+/* ── MAIN / GRID ─────────────────────────────────────── */
+.main {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 5rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .85rem;
+}
+
+/* ── CARD ────────────────────────────────────────────── */
+/*
+  O card é um <a href="produtos/nome-do-produto.html">.
+  Sem JS: clicou → vai para a página de detalhe. HTML puro.
+  Com JS: o script intercepta o clique e abre modal.
+  A estrutura HTML não muda entre as fases.
+*/
+.card {
+  display: block;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(134,1,32,.3);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--crimson);
+  outline-offset: 2px;
+}
+
+.card.esgotado {
+  opacity: .55;
+  pointer-events: none;
+}
+
+/* ── IMAGEM DO CARD ─────────────────────────────────── */
+.card-img-wrap {
+  position: relative;
+  height: 148px;
+  background: var(--blush-soft);
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── TAGS SOBRE A IMAGEM ────────────────────────────── */
+
+/* Tags no canto superior esquerdo: Destaque + Porção */
+.card-tags {
+  position: absolute;
+  top: 8px; left: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: .22rem .55rem;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+  width: fit-content;
+}
+
+/* Destaque — crimson */
+.tag--destaque {
+  background: rgba(134,1,32,.88);
+  color: #fff;
+}
+
+/* Porção — neutro escuro */
+.tag--porcao {
+  background: rgba(26,10,15,.62);
+  color: #fff;
+}
+
+/* Esgotado — escuro */
+.tag--esgotado {
+  background: rgba(26,10,15,.78);
+  color: #fff;
+}
+
+/*
+  "Últimas unidades" — faixa na base da imagem, não tag.
+  Como era antes: ocupa toda a largura, fundo escuro semi-transparente.
+*/
+.card-strip-limitado {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  z-index: 2;
+  background: rgba(134,1,32,.82);
+  color: #fff;
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: .3rem .5rem;
+  line-height: 1;
+}
+
+/* ── BODY DO CARD ───────────────────────────────────── */
+.card-body {
+  padding: .85rem .9rem 1rem;
+}
+
+.card-category {
+  font-size: .58rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.card-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin: .1rem 0 .28rem;
+  color: var(--text-1);
+  line-height: 1.2;
+}
+
+.card-desc {
+  font-size: .74rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: .75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* ── RODAPÉ DO CARD: só preço ───────────────────────── */
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.card-price {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--crimson);
+  line-height: 1;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border-soft);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: .78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+}
+
+/* ── RESPONSIVO ──────────────────────────────────────── */
+@media (min-width: 600px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .card-img-wrap { height: 190px; }
+  .hero { padding: 4.5rem 0 3rem; }
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardápio — Delicatte</title>
+  <link rel="stylesheet" href="css/cardapio.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="lights" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo" aria-label="Delicatte — voltar à capa">
+          <span class="logo-icon" aria-hidden="true">✦</span>
+          <span class="logo-text">Delicatte</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- INSTRUÇÃO -->
+  <aside class="instrucao-bar" role="note">
+    <div class="container">
+      <p class="instrucao-texto">
+        <span aria-hidden="true">👀</span>
+        Explore o cardápio e <strong>chame o atendente</strong> para fazer seu pedido.
+      </p>
+    </div>
+  </aside>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-titulo">
+    <div class="container">
+      <p class="hero-eyebrow">Cardápio digital</p>
+      <h1 class="hero-title" id="hero-titulo">Nosso <em>Cardápio</em></h1>
+      <p class="hero-subtitle">Cada peça feita com amor, do início ao fim.</p>
+    </div>
+  </section>
+
+  <!-- FILTROS (visuais — JS ativa o comportamento na próxima fase) -->
+  <section class="filters-section" role="search" aria-label="Filtrar produtos">
+    <div class="container">
+      <div class="filters-wrapper">
+
+        <div class="search-wrap">
+          <label for="search-input" class="sr-only">Buscar doce por nome</label>
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+            <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
+          </svg>
+          <input type="search" id="search-input" class="search-input" placeholder="Buscar doce..." autocomplete="off" />
+        </div>
+
+        <nav class="categories" role="group" aria-label="Filtrar por categoria">
+          <button class="category-btn active" data-categoria="todos">Todos</button>
+          <button class="category-btn" data-categoria="tortas">Tortas</button>
+          <button class="category-btn" data-categoria="bolos">Bolos</button>
+          <button class="category-btn" data-categoria="bombons">Bombons</button>
+          <button class="category-btn" data-categoria="especial">Especial</button>
+        </nav>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <main class="main">
+    <div class="container">
+      <div class="products-grid" role="list" aria-label="Lista de produtos">
+
+        <!--
+          Cada card é um <a href="produtos/nome.html">.
+          SEM JS: clicou → navega para a página de detalhe. HTML puro.
+          COM JS: o script intercepta o clique e abre modal — mesmo href, zero mudança no HTML.
+        -->
+
+        <!-- CARD 1 — Torta de Morango -->
+        <a class="card" href="produtos/torta-morango.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80&fit=crop" alt="Torta de Morango" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--destaque">✦ Destaque</span>
+              <span class="tag tag--porcao">Fatia · serve 1</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Tortas</span>
+            <h3 class="card-name">Torta de Morango</h3>
+            <p class="card-desc">Massa amanteigada, creme pâtissière e morangos frescos do dia.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 89,90</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 2 — Torta de Limão Siciliano -->
+        <a class="card" href="produtos/torta-limao.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&q=80&fit=crop" alt="Torta de Limão Siciliano" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--porcao">Fatia · serve 1</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Tortas</span>
+            <h3 class="card-name">Torta de Limão Siciliano</h3>
+            <p class="card-desc">Base de biscoito, curd de limão siciliano e merengue suíço tostado.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 79,90</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 3 — Cheesecake -->
+        <a class="card" href="produtos/cheesecake.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600&q=80&fit=crop" alt="Cheesecake de Frutas Vermelhas" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--porcao">Fatia · serve 1</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Tortas</span>
+            <h3 class="card-name">Cheesecake de Frutas Vermelhas</h3>
+            <p class="card-desc">Base crocante, cream cheese e coulis de frutas vermelhas frescas.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 72,00</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 4 — Bolo de Cenoura -->
+        <a class="card" href="produtos/bolo-cenoura.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80&fit=crop" alt="Bolo de Cenoura com Ganache" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--porcao">Fatia · serve 1</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Bolos</span>
+            <h3 class="card-name">Bolo de Cenoura com Ganache</h3>
+            <p class="card-desc">Massa úmida e perfumada com ganache de chocolate belga meio amargo.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 65,00</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 5 — Red Velvet -->
+        <a class="card" href="produtos/red-velvet.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=600&q=80&fit=crop" alt="Red Velvet" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--destaque">✦ Destaque</span>
+              <span class="tag tag--porcao">Fatia · serve 1</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Bolos</span>
+            <h3 class="card-name">Red Velvet</h3>
+            <p class="card-desc">Massa aveludada com cacau, frosting de cream cheese e pétalas de rosa.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 95,00</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 6 — Bombom de Trufa (destaque + limitado) -->
+        <a class="card" href="produtos/bombom-trufa.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&q=80&fit=crop" alt="Bombom de Trufa com Caramelo Salgado" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--destaque">✦ Destaque</span>
+              <span class="tag tag--porcao">Por unidade</span>
+            </div>
+            <div class="card-strip-limitado">Últimas unidades</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Bombons</span>
+            <h3 class="card-name">Bombom de Trufa</h3>
+            <p class="card-desc">Chocolate 70% cacau com caramelo salgado e flor de sal.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 12,50</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 7 — Bombom de Pistache -->
+        <a class="card" href="produtos/bombom-pistache.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600&q=80&fit=crop" alt="Bombom de Pistache" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--porcao">Por unidade</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Bombons</span>
+            <h3 class="card-name">Bombom de Pistache</h3>
+            <p class="card-desc">Chocolate branco Callebaut com ganache de pistache iraniano.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 15,00</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 8 — Caixa de Macarons -->
+        <a class="card" href="produtos/macarons.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600&q=80&fit=crop" alt="Caixa de Macarons" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--destaque">✦ Destaque</span>
+              <span class="tag tag--porcao">Caixa com 6 un.</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Especial</span>
+            <h3 class="card-name">Caixa de Macarons</h3>
+            <p class="card-desc">6 macarons — pistache, framboesa e baunilha de Madagascar.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 48,00</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 9 — Éclair de Chocolate -->
+        <a class="card" href="produtos/eclair.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1509461399763-ae67a981b254?w=600&q=80&fit=crop" alt="Éclair de Chocolate" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--porcao">Por unidade</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Especial</span>
+            <h3 class="card-name">Éclair de Chocolate</h3>
+            <p class="card-desc">Massa choux assada no dia, creme de chocolate e glacê espelhado.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 18,00</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- CARD 10 — Seleção da Casa (destaque + limitado) -->
+        <a class="card" href="produtos/selecao-da-casa.html" role="listitem">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://images.unsplash.com/photo-1607478900766-efe13248b125?w=600&q=80&fit=crop" alt="Seleção da Casa" loading="lazy" />
+            <div class="card-tags">
+              <span class="tag tag--destaque">✦ Destaque</span>
+              <span class="tag tag--porcao">Caixa com 12 un.</span>
+            </div>
+            <div class="card-strip-limitado">Últimas unidades</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Especial</span>
+            <h3 class="card-name">Seleção da Casa</h3>
+            <p class="card-desc">Curadoria exclusiva — composição varia conforme a produção do dia.</p>
+            <div class="card-footer">
+              <p class="card-price">R$ 189,00</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        <span aria-hidden="true">✦</span>
+        Delicatte — Chame o atendente para fazer seu pedido.
+      </p>
+    </div>
+  </footer>
+
+  <!--
+    PRÓXIMA FASE (branch: com-js)
+    <script src="js/cardapio.js"></script>
+
+    O script vai:
+    1. Ler db.json via fetch() e gerar os cards automaticamente
+    2. Interceptar o clique no <a class="card"> e abrir modal
+       em vez de navegar — o href continua como fallback
+    3. Ativar busca e filtros de categoria
+  -->
+
+</body>
+</html>
